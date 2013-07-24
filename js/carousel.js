@@ -3,8 +3,47 @@ var carousel = document.getElementById('carousel');
 // Buttons
 var next = document.getElementById('next');
 var previous = document.getElementById('previous');
+window.onload = function(){
 
-carousel.style.marginLeft = 0;
+  carousel.style.marginLeft = 0;
+
+    next.onmouseover = function() {
+      this.style.opacity = .2;
+
+    next.onmouseout = function() {
+      this.style.opacity = .5;
+
+    next.onclick = function(){
+      if (document.getElementById("carousel").style.marginLeft === "0px") {
+        document.getElementById("carousel").style.marginLeft = "-612px";
+      } else if (document.getElementById("carousel").style.marginLeft === "-612px") {
+          document.getElementById("carousel").style.marginLeft = "-1224px";
+     };
+    };
+  };
+
+    previous.onmouseover = function() {
+      this.style.opacity = .2;
+
+    previous.onmouseout = function() {
+      this.style.opacity = .5;
+
+    previous.onclick = function(){
+    if (document.getElementById("carousel").style.marginLeft === "0px") {
+      document.getElementById("carousel").style.marginLeft = "612px";
+    } else if (document.getElementById("carousel").style.marginLeft === "612px") {
+        document.getElementById("carousel").style.marginLeft = "1224px";
+      };
+    };
+  };
+};
+  // next.onclick = function(){
+  // document.getElementById("carousel").style.marginLeft = "-610px";
+  // };
+
+  // previous.onclick = function(){
+  //  document.getElementById('carousel').style.marginLeft += 600 + 'px';
+
 
 // Create mouseoveer and mouseexit events for the buttons
 // to change their opacity from .5 to .2
