@@ -15,26 +15,33 @@ var previous = document.getElementById('previous');
     };
 
     next.onclick = function(){
-      if (carousel.style.marginLeft === "0px") {
+      if (carousel.style.marginLeft == "0px") {
         carousel.style.marginLeft = "-612px";
-      } else if (carousel.style.marginLeft === "-612px") {
+      } else if (carousel.style.marginLeft == "-612px") {
           carousel.style.marginLeft = "-1224px";
+      } else {
+        carousel.style.marginLeft = "0px";
+      }
      };
 
     previous.onmouseover = function() {
       this.style.opacity = .2;
+    };
 
     previous.onmouseout = function() {
       this.style.opacity = .5;
+    };
 
     previous.onclick = function(){
-    if (carousel.style.marginLeft === "0px") {
-      carousel.style.marginLeft = "612px";
-    } else if (carousel.style.marginLeft === "612px") {
-        carousel.style.marginLeft = "1224px";
-      };
-    };
+    if (carousel.style.marginLeft == "0px") {
+      carousel.style.marginLeft = "-1224px";
+    } else if (carousel.style.marginLeft == "-1224px") {
+        carousel.style.marginLeft = "-612px";
+    } else {
+      carousel.style.marginLeft = "0px";
+    }
   };
+
   // next.onclick = function(){
   // document.getElementById("carousel").style.marginLeft = "-610px";
   // };
